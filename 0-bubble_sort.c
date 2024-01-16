@@ -21,9 +21,9 @@ temp = array[j];
 array[j] = array[j + 1];
 array[j + 1] = temp;
 swapped = true;
+print_array(array, size);
 }
 }
 i++;
-print_array(array, size);
 }while(swapped);
 }
