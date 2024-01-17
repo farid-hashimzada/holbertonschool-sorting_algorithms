@@ -28,6 +28,15 @@ void insertion_sort_list(listint_t **list)
 
 			prev->next = curr->next;
 			curr->next = prev;
+			curr->prev = prev->prev;
+
+			if (prev->prev != NULL)
+				prev->prev->next = curr;
+
+			prev->prev = curr;
+
+			if (curr->prev == NULL)
+				*list = curr;
 
 			print_list(*list);
 		}
